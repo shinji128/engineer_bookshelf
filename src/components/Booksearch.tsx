@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const Booksearch = () => {
+export const BookSearch = () => {
   const [title, setTitle] = useState('')
   const googleBooksApi = 'https://www.googleapis.com/books/v1/volumes?q=';
   const searchGoogleBooks = async () => {
