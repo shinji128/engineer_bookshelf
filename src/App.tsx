@@ -1,9 +1,15 @@
-import './App.css';
+import { useState } from 'react';
+import { Booksearch } from './components/Booksearch';
+import { Login } from './components/Login';
 
 function App() {
+  const [isAuth, setIsAuth] = useState<boolean>(localStorage.getItem('isAuth') === 'true');
+
   return (
-    <div className='App'>
-    </div>
+    <>
+      <Login setIsAuth={setIsAuth}/>
+      <Booksearch />
+    </>
   );
 }
 
