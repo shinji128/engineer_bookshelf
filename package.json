@@ -20,6 +20,7 @@
     "yarn": "^1.22.19"
   },
   "scripts": {
+    "dev": "react-scripts start && tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
