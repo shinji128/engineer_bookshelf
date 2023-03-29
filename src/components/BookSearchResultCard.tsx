@@ -1,12 +1,5 @@
-type Book = {
-  id: string;
-  volumeInfo: {
-    title: string;
-    imageLinks: {
-      thumbnail: string;
-    }
-  }
-}
+import { RegisterBook } from "./RegisterBook";
+import { Book } from "../types/Book"
 
 type Props = {
   book: Book;
@@ -24,14 +17,7 @@ export const BookSearchResultCard: React.FC<Props> = (props) => {
         <h3 className="mt-6 text-sm text-gray-900">{book.volumeInfo.title}</h3>
       </div>
       <div>
-        <div className="text-lg">登録</div>
-          {/* <a
-            href={`mailto:${book.email}`}
-            className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
-          >
-            <EnvelopeIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-            Email
-          </a> */}
+        <RegisterBook book={book}/>
       </div>
     </li>
   )
