@@ -1,15 +1,10 @@
 import { useState } from "react"
 import { BookSearchResultCard } from "./BookSearchResultCard";
+import { Book } from "../types/Book"
 
-type Book = {
-  id: string;
-  volumeInfo: {
-    title: string;
-    imageLinks: {
-      thumbnail: string;
-    }
-  }
-}
+type BookApiResponse = {
+  items: Book[];
+};
 
 export const BookSearch = () => {
   const [title, setTitle] = useState('')
@@ -25,8 +20,15 @@ export const BookSearch = () => {
   }
 
   const getSearchBooks = async() => {
-    const res: any = await googleBooksFetch()
-    setSearchAllBook(res.items)
+    const res = await googleBooksFetch()
+    const data = res as BookApiResponse;
+    const books = data.items;
+    console.log(books)
+    const filteredBooks = books.filter( book => {
+      const identifiers = book.volumeInfo.industryIdentifiers;
+      return identifiers?.some(identifier => identifier.type === 'ISBN_13');
+    });
+    setSearchAllBook(filteredBooks);
   }
 
   return (
