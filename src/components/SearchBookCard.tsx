@@ -5,7 +5,7 @@ type Props = {
   book: Book;
 };
 
-export const BookSearchResultCard: React.FC<Props> = (props) => {
+export const SearchBookCard: React.FC<Props> = (props) => {
   const { book } = props;
   return (
     <li

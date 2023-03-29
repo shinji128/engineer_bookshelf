@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { GoogleBooksApiFetch } from "./GoogleBooksApiFetch"
-import { BookSearchResultCard } from "./BookSearchResultCard";
 import { Book } from "../types/Book"
+import { SearchBooks } from "./SearchBooks";
 
 type BookApiResponse = {
   items: Book[];
 };
 
-export const BookSearch = () => {
+export const SearchBooksPage = () => {
   const [title, setTitle] = useState('')
-  const [searchAllBook, setSearchAllBook] = useState<Book[]>([]);
+  const [searchBooks, setSearchBooks] = useState<Book[]>([]);
 
   const getSearchBooks = async() => {
     const res = await GoogleBooksApiFetch({ title: title });
@@ -19,7 +19,7 @@ export const BookSearch = () => {
       const identifiers = book.volumeInfo.industryIdentifiers;
       return identifiers?.some(identifier => identifier.type === 'ISBN_13');
     });
-    setSearchAllBook(filteredBooks);
+    setSearchBooks(filteredBooks);
   }
 
   return (
@@ -27,11 +27,7 @@ export const BookSearch = () => {
       <input type='text' placeholder='タイトル' onChange={(e) => setTitle(e.target.value)}/>
       <button onClick={getSearchBooks}>検索</button>
       <div className="bg-gray-100 p-5">
-        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {searchAllBook.map((book:Book, i) => {
-            return <BookSearchResultCard key={i} book={book} />
-          })}
-        </ul>
+        <SearchBooks books={searchBooks}/>
       </div>
     </div>
   )

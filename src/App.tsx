@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BookSearch } from './components/BookSearch';
+import { SearchBooksPage } from './components/SearchBooksPage';
 import { Login } from './components/Login';
 import './index.css'
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Login setIsAuth={setIsAuth}/>
-      <BookSearch />
+      <SearchBooksPage />
     </>
   );
 }
