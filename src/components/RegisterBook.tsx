@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase";
 import { Book } from "../types/Book"
 
@@ -10,7 +10,7 @@ export const RegisterBook: React.FC<Props> = (props) => {
   const { book } = props
   const isbnId = book.volumeInfo.industryIdentifiers.find(obj => obj.type === 'ISBN_13')?.identifier;
   const registerBook = async () => {
-    await addDoc(collection(db, "books"), {
+    await setDoc(doc(db, `users/${auth.currentUser?.uid}/books`, String(isbnId)), {
       title: book.volumeInfo.title,
       isbnId: isbnId,
       user: {
