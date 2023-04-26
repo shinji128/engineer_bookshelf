@@ -9,13 +9,13 @@ export const MyBooksPage = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (!user) return<></>
+      //ここでsetIsAuthを使う
+      //カスタムフックにした方が良さげ
       const getRegisterBooks = async () => {
         const q = query(collection(db, `users/${user?.uid}/books`))
         const qq = await getDocs(q)
         setIsbnIds(qq.docs.map((doc) => doc.id))
-        return (
-          <></>
-        )
+        return <></>
       }
       getRegisterBooks()
     })
