@@ -1,6 +1,6 @@
 import { setDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase";
-import { Book } from "../types/Book"
+import { Book, STATES } from "../types/Book"
 
 type Props = {
   book: Book;
@@ -13,6 +13,7 @@ export const RegisterBook: React.FC<Props> = (props) => {
     await setDoc(doc(db, `users/${auth.currentUser?.uid}/books`, String(isbnId)), {
       title: book.volumeInfo.title,
       isbnId: isbnId,
+      state: STATES.UNREAD,
       user: {
         username: auth.currentUser?.displayName,
         id: auth.currentUser?.uid
