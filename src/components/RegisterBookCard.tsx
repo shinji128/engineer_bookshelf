@@ -4,10 +4,11 @@ import { Book } from "../types/Book"
 
 type Props = {
   isbnId: string;
+  state: string;
 };
 
 export const RegisterBookCard: React.FC<Props> = (props) => {
-  const { isbnId } = props;
+  const { isbnId, state } = props;
   const [book, setBook] = useState({
     title: '',
     image: ''
@@ -35,6 +36,7 @@ export const RegisterBookCard: React.FC<Props> = (props) => {
       <div className="flex flex-1 flex-col p-5">
         <img className="mx-auto h-32 w-32" src={book.image} alt="" />
         <h3 className="mt-6 text-sm text-gray-900">{book.title}</h3>
+        <div>{state}</div>
       </div>
     </li>
   );

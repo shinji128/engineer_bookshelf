@@ -4,8 +4,13 @@ import { onAuthStateChanged } from "firebase/auth"
 import { useEffect, useState } from "react";
 import { RegisterBooks } from "./RegisterBooks";
 
+type RegisterBook = {
+  isbnId: string;
+  state: string;
+}
+
 export const MyBooksPage = () => {
-  const [isbnIds, setIsbnIds] = useState<any[]>([])
+  const [registerBooks, setRegisterBooks] = useState<RegisterBook[]>([])
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (!user) return<></>
@@ -14,13 +19,13 @@ export const MyBooksPage = () => {
       const getRegisterBooks = async () => {
         const q = query(collection(db, `users/${user?.uid}/books`))
         const qq = await getDocs(q)
-        setIsbnIds(qq.docs.map((doc) => doc.id))
+        setRegisterBooks(qq.docs.map((doc) => ({ isbnId: doc.id, state: doc.data().state })))
         return <></>
       }
       getRegisterBooks()
     })
   }, [])
   return (
-    <RegisterBooks isbnIds={isbnIds} />
+    <RegisterBooks registerBooks={registerBooks} />
   )
 }
