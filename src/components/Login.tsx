@@ -1,21 +1,18 @@
-import { Dispatch, SetStateAction } from 'react';
 import { auth, provider } from '../firebase'
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { login } from '../features/auth/AuthSlice';
 
-type Props = {
-  setIsAuth: Dispatch<SetStateAction<boolean>>;
-};
-
-export const Login: React.FC<Props> = ({ setIsAuth }) => {
+export const Login = () => {
+  const dispatch = useDispatch();
   const loginInGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
-      localStorage.setItem('isAuth', 'true');
-      setIsAuth(true);
+      dispatch(login());
     });
   };
   return (
     <>
-      <button onClick={loginInGoogle}>Googleでログイン</button>
+      <button className="px-2 text-white hover:bg-blue-600 pt-5" onClick={loginInGoogle}>ログイン</button>
     </>
   )
 }
