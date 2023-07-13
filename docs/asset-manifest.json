@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/shinji128/engineer_bookshelf/static/css/main.b0dad343.css",
-    "main.js": "/shinji128/engineer_bookshelf/static/js/main.75135384.js",
-    "static/js/787.d126b7f5.chunk.js": "/shinji128/engineer_bookshelf/static/js/787.d126b7f5.chunk.js",
-    "index.html": "/shinji128/engineer_bookshelf/index.html",
-    "main.b0dad343.css.map": "/shinji128/engineer_bookshelf/static/css/main.b0dad343.css.map",
-    "main.75135384.js.map": "/shinji128/engineer_bookshelf/static/js/main.75135384.js.map",
-    "787.d126b7f5.chunk.js.map": "/shinji128/engineer_bookshelf/static/js/787.d126b7f5.chunk.js.map"
+    "main.css": "/engineer_bookshelf/static/css/main.b0dad343.css",
+    "main.js": "/engineer_bookshelf/static/js/main.f058c8eb.js",
+    "static/js/787.d126b7f5.chunk.js": "/engineer_bookshelf/static/js/787.d126b7f5.chunk.js",
+    "index.html": "/engineer_bookshelf/index.html",
+    "main.b0dad343.css.map": "/engineer_bookshelf/static/css/main.b0dad343.css.map",
+    "main.f058c8eb.js.map": "/engineer_bookshelf/static/js/main.f058c8eb.js.map",
+    "787.d126b7f5.chunk.js.map": "/engineer_bookshelf/static/js/787.d126b7f5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0dad343.css",
-    "static/js/main.75135384.js"
+    "static/js/main.f058c8eb.js"
   ]
 }
