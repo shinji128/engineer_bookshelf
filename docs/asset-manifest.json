@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/shinji128/engineer_bookshelf/static/css/main.b0dad343.css",
+    "main.js": "/shinji128/engineer_bookshelf/static/js/main.0a3f4709.js",
+    "static/js/787.d126b7f5.chunk.js": "/shinji128/engineer_bookshelf/static/js/787.d126b7f5.chunk.js",
+    "index.html": "/shinji128/engineer_bookshelf/index.html",
+    "main.b0dad343.css.map": "/shinji128/engineer_bookshelf/static/css/main.b0dad343.css.map",
+    "main.0a3f4709.js.map": "/shinji128/engineer_bookshelf/static/js/main.0a3f4709.js.map",
+    "787.d126b7f5.chunk.js.map": "/shinji128/engineer_bookshelf/static/js/787.d126b7f5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0dad343.css",
+    "static/js/main.0a3f4709.js"
+  ]
+}
