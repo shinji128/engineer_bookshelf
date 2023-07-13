@@ -7,6 +7,7 @@ import { Header } from './components/Header';
 import { Logout } from './components/Logout';
 import { rootState } from './store';
 import { Provider } from 'react-redux'
+import { Hoge } from './components/Hoge';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Header />
         <div className="bg-gray-100 min-h-screen p-5">
+          <Hoge />
           <Routes>
             <Route path="/" element={<MyBooksPage />} />
             <Route path="/searchbook" element={<SearchBooksPage />} />
